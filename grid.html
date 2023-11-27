@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grid practice">
+    <title>Grid practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 80vh;
+            width: 70vw;
+            background-color: burlywood;
+            display:grid;
+            grid-template-columns: auto auto auto; /* Or we can use grid-template-area : name name . . .*/
+            padding: 10px;
+            gap: 8px;
+
+        }
+        .item{
+            display: flex;
+            background-color: rgb(246, 97, 43);
+            border: 2px dashed green;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .item1{
+            grid-column: 1/4
+        }
+        .item5{
+            grid-column: 1/3;
+        }
+        .item4{
+            grid-area: 2/3/5/4;  
+            /* row-start/col-start/row-end/col-end */
+        }
+        .item8{
+            grid-area:5/1/span 3/span 3; 
+            /* very important as it solves the conflict of resizing and positioning. */
+            /* As It has covered all the collumns It won't take any one's place instead It will take everyone's size. */
+        }
+        .item12{
+            grid-column: 2/3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+        <div class="item item11">11</div>
+        <div class="item item12">12</div>
+    </div>
+</body>
+</html>

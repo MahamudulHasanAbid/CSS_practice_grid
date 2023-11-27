@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .item1{
+            grid-area:header;
+            background-color: rgb(136, 161, 134) !important;
+        }
+        .item2{
+            grid-area:navbar;
+            background-color: black !important;
+            color: white;
+        }
+        .item3{grid-area:menu;}
+        .item4{grid-area:main;}
+        .item5{grid-area:bottom;}
+        .item6{
+            grid-area:footer;
+            background-color: black !important;
+            color: white;
+        }
+        .container{
+            height: 100vh;
+            width:100vw;
+            background-color: #f9eeee;
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 'header header header header' 
+                                 'navbar navbar navbar navbar'
+                                 'menu main main main'
+                                 'menu bottom bottom bottom'
+                                 'footer footer footer footer';
+            grid-template-rows: 2.5fr 0.25fr 4fr 2fr 0.25fr;
+            gap: 2px;
+
+        }
+        .container>div{
+            background-color: #c1bebe;
+            border:2px solid rgb(106, 25, 25);
+            text-align: center;
+            font-size: larger;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Header </div>
+        <div class="item item2">Navbar</div>
+        <div class="item item3">Menu</div>
+        <div class="item item4">Main</div>
+        <div class="item item5">Bottom</div>
+        <div class="item item6">Footer</div>
+    </div>
+</body>
+</html>
